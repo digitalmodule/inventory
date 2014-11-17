@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 	
+	<package name="common" namespace="/common" extends="struts-default">
+	    <result-types>
+			<result-type name="GsonJSON" class="com.dmt.utility.GsonJSONResult" />
+		</result-types>
+		
+		<action name="Index" class="com.dmt.common.actions.IndexAction" method="launchIndex">
+			<result name="success">Index.jsp</result>
+			<result name="error">Error.jsp</result>
+		</action>
+		<action name="Authentication" class="com.dmt.common.actions.LoginAction" method="authenticate">
+			<result name="success">Master.jsp</result>
+			<result name="input">Index.jsp</result>
+		</action>
+		<action name="Logout" class="com.dmt.common.actions.LoginAction" method="logout">
+			<result name="success">Index.jsp</result>
+		</action>
+		<action name="EncryptText" class="com.dmt.common.actions.IndexAction" method="encryptText">
+			<result type="GsonJSON">ajaxCall</result>
+		</action>
+	</package>
+</struts>

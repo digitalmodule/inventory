@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="inventory" namespace="/inventory" extends="struts-default">
+
+		<result-types>
+			<result-type name="GsonJSON" class="com.dmt.utility.GsonJSONResult" />
+		</result-types>
+
+		<action name="LaunchInventory" class="com.dmt.inventory.actions.LaunchInventoryAction" method="launchInventory">
+			<result name="success">Inventory.jsp</result>
+			<result name="error">/common/Error.jsp</result>
+		</action>
+		
+		<action name="GetRoom" class="com.dmt.inventory.actions.InventoryAction" method="getRoomData">
+			<result type="GsonJSON">ajaxCall</result>
+			<result name="input">/common/Index.jsp</result>
+		</action>
+		
+		<action name="GetProjectorInfo" class="com.dmt.inventory.actions.InventoryAction" method="getProjectorInfo">
+			<result type="GsonJSON">ajaxCall</result>
+		</action>
+		
+		<action name="GetComputerInfo" class="com.dmt.inventory.actions.InventoryAction" method="getComputerInfo">
+			<result type="GsonJSON">ajaxCall</result>
+		</action>
+		
+		<action name="GetProjectorModelInfo" class="com.dmt.inventory.actions.InventoryAction" method="getProjectorModelInfo">
+			<result type="GsonJSON">ajaxCall</result>
+		</action>
+		
+		<action name="SaveInventory" class="com.dmt.inventory.actions.InventoryAction" method="saveInventory">
+			<result type="GsonJSON">ajaxCall</result>
+			<result name="input">/common/Index.jsp</result>
+		</action>
+		
+		<action name="SaveProjectorInformation" class="com.dmt.inventory.actions.InventoryAction" method="saveProjectorInformation">
+			<result type="GsonJSON">ajaxCall</result>
+			<result name="input">/common/Index.jsp</result>
+		</action>
+		
+		<action name="SaveComputerInformation" class="com.dmt.inventory.actions.InventoryAction" method="saveComputerInformation">
+			<result type="GsonJSON">ajaxCall</result>
+			<result name="input">/common/Index.jsp</result>
+		</action>
+		
+		<action name="SendTicketEmail" class="com.dmt.inventory.actions.EmailAction" method="sendTicketEmail">
+			<result type="GsonJSON">ajaxCall</result>
+			<result name="input">/common/Index.jsp</result>
+		</action>
+		
+		<action name="ReplaceBulb" class="com.dmt.inventory.actions.InventoryAction" method="replaceBulb">
+			<result type="GsonJSON">ajaxCall</result>
+			<result name="input">/common/Index.jsp</result>
+		</action>
+
+	</package>
+</struts>
