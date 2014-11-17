@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public interface Constants
 {
-	String USERNAME	= "8sQOe92aU4STOC7uvJxfaHZIUEDYP0xeHgg+GDT4BdY=";
-	String PASSWORD = "Bc7oFOWKRgo5p6clNJlABQ==";
+	String USERNAME	= "8sQOe92aU4STOC7uvasdfasfJxfaHZIUEDYP0xeHgg+GDT4BdY=";
+	String PASSWORD = "Bc7oFOWKRgo5pasdfasd6clNJlABQ==";
 
 	
 	ArrayList<String> SAVE_COLUMN_IGNORE_LIST =  new ArrayList<String>(Arrays.asList(new String[]{
